@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.1.1 (Python 3.11.5 on win32)" generated="20230917 11:59:56.661" rpa="false" schemaversion="4">
+<suite id="s1" name="DBTesting" source="C:\Users\aymen\PycharmProjects\pythonProject1\TestCases\DBTesting.robot">
+<kw name="Connect To Database" library="DatabaseLibrary" type="SETUP">
+<arg>pymysql</arg>
+<arg>${DBName}</arg>
+<arg>${DBUser}</arg>
+<arg>${DBPass}</arg>
+<arg>${DBHost}</arg>
+<arg>${DBPort}</arg>
+<doc>Loads the DB API 2.0 module given `dbapiModuleName` then uses it to
+connect to the database using `dbName`, `dbUsername`, and `dbPassword`.</doc>
+<msg timestamp="20230917 11:59:56.804" level="INFO">Connecting using : pymysql.connect(db=user, user=root, passwd=***, host=127.0.0.1, port=3308, charset=None) </msg>
+<status status="PASS" starttime="20230917 11:59:56.751" endtime="20230917 11:59:56.826"/>
+</kw>
+<test id="s1-t1" name="Inserting Data in Table Person" line="19">
+<kw name="Execute Sql String" library="DatabaseLibrary">
+<var>${output}</var>
+<arg>./TestData/user_person_insertData.sql</arg>
+<doc>Executes the sqlString as SQL commands. Useful to pass arguments to your sql. Set optional input `sansTran` to
+True to run command without an explicit transaction commit or rollback.</doc>
+<msg timestamp="20230917 11:59:56.828" level="INFO">Executing : Execute SQL String  |  ./TestData/user_person_insertData.sql </msg>
+<msg timestamp="20230917 11:59:56.831" level="FAIL">ProgrammingError: (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near './TestData/user_person_insertData.sql' at line 1")</msg>
+<status status="FAIL" starttime="20230917 11:59:56.828" endtime="20230917 11:59:56.840"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${output}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20230917 11:59:56.841" endtime="20230917 11:59:56.841"/>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${output}</arg>
+<arg>None</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="NOT RUN" starttime="20230917 11:59:56.841" endtime="20230917 11:59:56.841"/>
+</kw>
+<status status="FAIL" starttime="20230917 11:59:56.827" endtime="20230917 11:59:56.842">ProgrammingError: (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near './TestData/user_person_insertData.sql' at line 1")</status>
+</test>
+<kw name="Disconnect From Database" library="DatabaseLibrary" type="TEARDOWN">
+<doc>Disconnects from the database.
+By default it's not an error if there was no open database connection -
+suitable for usage as a teardown.
+However you can enforce it using the `error_if_no_connection` parameter.</doc>
+<msg timestamp="20230917 11:59:56.846" level="INFO">Executing : Disconnect From Database</msg>
+<status status="PASS" starttime="20230917 11:59:56.846" endtime="20230917 11:59:56.847"/>
+</kw>
+<status status="FAIL" starttime="20230917 11:59:56.664" endtime="20230917 11:59:56.847"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="0" fail="1" skip="0" id="s1" name="DBTesting">DBTesting</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

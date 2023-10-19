@@ -1,0 +1,1 @@
+[ WARN ] The chromedriver version (116.0.5845.96) detected in PATH at C:\Users\aymen\AppData\Local\Programs\Python\Python311\Scripts\chromedriver.exe might not be compatible with the detected chrome version (117.0.5938.62); currently, chromedriver 117.0.5938.62 is recommended for chrome 117.*, so it is advised to delete the driver in PATH and retry

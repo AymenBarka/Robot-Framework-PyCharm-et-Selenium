@@ -1,0 +1,12 @@
+[ ERROR ] Error in file 'C:\Users\aymen\PycharmProjects\pythonProject1\Resources\RegistrationKeywords.robot' on line 5: Processing variable file '../PageObjects/Locators.ppy' failed: Importing variable file '../PageObjects/Locators.ppy' failed: ModuleNotFoundError: No module named '.'
+Traceback (most recent call last):
+  None
+PYTHONPATH:
+  C:\Users\aymen\PycharmProjects\pythonProject1\venv\Scripts\robot.exe
+  C:\Users\aymen\AppData\Local\Programs\Python\Python311\python311.zip
+  C:\Users\aymen\AppData\Local\Programs\Python\Python311\DLLs
+  C:\Users\aymen\AppData\Local\Programs\Python\Python311\Lib
+  C:\Users\aymen\AppData\Local\Programs\Python\Python311
+  C:\Users\aymen\PycharmProjects\pythonProject1\venv
+  C:\Users\aymen\PycharmProjects\pythonProject1\venv\Lib\site-packages
+[ WARN ] The chromedriver version (116.0.5845.96) detected in PATH at C:\Users\aymen\AppData\Local\Programs\Python\Python311\Scripts\chromedriver.exe might not be compatible with the detected chrome version (117.0.5938.62); currently, chromedriver 117.0.5938.62 is recommended for chrome 117.*, so it is advised to delete the driver in PATH and retry
